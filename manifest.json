@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "SheepIt Re-Design",
+  "version": "1.0",
+  "description": "Enhances SheepIt Render Farm with redesigned UI elements, including top 10 frames and user profile by attilagaliba",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "SheepIt Re-Design"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.sheepit-renderfarm.com/project/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["*://www.sheepit-renderfarm.com/user/*/profile"],
+      "js": ["user.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["activeTab"]
+}
